@@ -63,26 +63,28 @@ require '../layouts/sidNav.php';
     <div class="container-fluid">
         <h1 class="mt-4">Dashboard</h1>
         <ol class="breadcrumb mb-4">
-      
-      
-          <?php 
+
+
+            <?php 
 
              PrintMessages('Dashboard / Roles / Create');
              
           ?>
-      
-        
-      
-      
+
+
+
+
         </ol>
 
 
 
-        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data">
+        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post"
+            enctype="multipart/form-data">
 
             <div class="form-group">
                 <label for="exampleInputName">Title</label>
-                <input type="text" class="form-control"  id="exampleInputName" aria-describedby="" name="title" placeholder="Enter Role Title">
+                <input type="text" class="form-control" id="exampleInputName" aria-describedby="" name="title"
+                    placeholder="Enter Role Title">
             </div>
 
             <button type="submit" class="btn btn-primary">SAVE</button>

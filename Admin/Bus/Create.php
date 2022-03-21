@@ -82,8 +82,8 @@ require '../layouts/sidNav.php';
             enctype="multipart/form-data">
 
             <div class="form-group">
-                <label for="exampleInputName">Title</label>
-                <input type="text" class="form-control" id="exampleInputName" aria-describedby="" name="title"
+                <label for="exampleInputName">model</label>
+                <input type="text" class="form-control" id="exampleInputName" aria-describedby="" name="model"
                     placeholder="Enter Category Title">
             </div>
 
