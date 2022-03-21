@@ -8,7 +8,7 @@ require '../helpers/functions.php';
 # Fetch Raw Data ..... 
 
 $id = $_GET['id'];
-$sql = "select * from userroles where id = $id";
+$sql = "select * from trip where id = $id";
 $op  = doQuery($sql);
 $data = mysqli_fetch_assoc($op);
 
@@ -91,7 +91,8 @@ require '../layouts/sidNav.php';
 
             <div class="form-group">
                 <label for="exampleInputName">Title</label>
-                <input type="text" class="form-control" id="exampleInputName" aria-describedby="" name="title" value="<?php echo $data['title']; ?>" placeholder="Enter Role Title">
+                <input type="text" class="form-control" id="exampleInputName" aria-describedby="" name="title"
+                    value="<?php echo $data['title']; ?>" placeholder="Enter Role Title">
             </div>
 
             <button type="submit" class="btn btn-primary">Update</button>
