@@ -31,7 +31,32 @@ function Validate($input,$flag){
                    $status = false; 
                 }
                 break; 
+                case"date":
+                    $datedata =explode('-',$input);
+                    if(!checkdate($datedata[1],$datedata[2],$datedata[0])){
+                        $status=false;   
+                    }
+                    break;
+            case "nextdate":
+                $date= strtotime($input);
+                if($date < time()){
+                    $status=false; 
+                }
+                break;
                 
+            case"string":
+                if (!preg_match("/^[a-zA-Z-']*$/",$input)) {
+                    $status=false; 
+
+                }
+                break;
+
+                case"phone":
+                    if (!preg_match("/^01[0-2,5][0-9]{8}*$/",$input)) {
+                        $status=false; 
+    
+                    }
+                    break;
 
      }
 
@@ -83,6 +108,12 @@ function PrintMessages($message = null){
 
      return $status;
  }
+ 
+ function url($input){
+             
+    return "http://".$_SERVER['HTTP_HOST']."/project/Admin/".$input;
+       
+ } 
 
 
 ?>

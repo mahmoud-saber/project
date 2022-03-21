@@ -6,7 +6,7 @@ require '../helpers/DBConnection.php';
 require '../helpers/functions.php';
 
 # Fetch Data .... 
-$sql = "select * from trip";
+$sql = "select drive_bus.* , driver.name,bus.model from drive_bus inner join  driver on drive_bus.driver_id=driver.id  inner join bus on drive_bus.bus_id=bus.id; ";
 $op  = doQuery($sql);
 
 ##########################################################################################################
@@ -30,7 +30,7 @@ require '../layouts/sidNav.php';
 
             <?php
 
-            PrintMessages('Dashboard/Trip');
+            PrintMessages('Dashboard/drive_buses');
 
             ?>
         </ol>
@@ -43,7 +43,7 @@ require '../layouts/sidNav.php';
         <div class="card mb-4">
             <div class="card-header">
                 <i class="fas fa-table mr-1"></i>
-                List Trip System
+                List Categories
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -51,19 +51,16 @@ require '../layouts/sidNav.php';
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>name_trip</th>
-                                <th>price</th>
-                                <th>date</th>
-
+                                <th>Name Driver</th>
+                                <th>Bus</th>
+                                <th>Control</th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
                                 <th>ID</th>
-                                <th>name_trip</th>
-                                <th>price</th>
-                                <th>date</th>
-
+                                <th>Name Driver</th>
+                                <th>Bus</th>
                                 <th>Control</th>
                             </tr>
                         </tfoot>
@@ -79,13 +76,10 @@ require '../layouts/sidNav.php';
 
                             ?>
                             <tr>
-                                <!-- id	name_trip	date	bus_id	client_id	price	admin_id -->
-
                                 <td><?php echo $data['id']; ?></td>
-                                <td><?php echo $data['name_trip']; ?></td>
-                                <td><?php echo $data['price']; ?></td>
-                                <td><?php echo date('Y/M/D',$data['date']); ?></td>
-                                <td>
+                                <td><?php echo $data['name']; ?></td>
+                                <td><?php echo $data['model']; ?></td>
+                                = <td>
                                     <a href='Remove.php?id=<?php echo $data['id']; ?>'
                                         class='btn btn-danger m-r-1em'>Delete</a>
 

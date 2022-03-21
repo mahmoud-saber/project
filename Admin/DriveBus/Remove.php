@@ -6,7 +6,7 @@
   $id = $_GET['id']; 
 
   # Call DBRemove Method 
-  $status = DBRemove('trip',$id); 
+  $status = DBRemove('drive_bus',$id); 
 
 
   if($status){

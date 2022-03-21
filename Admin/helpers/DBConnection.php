@@ -1,6 +1,5 @@
 <?php  
 
-session_start();
 
 $server = "localhost";
 $dbName = "project";

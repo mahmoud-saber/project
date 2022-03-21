@@ -2,6 +2,7 @@
 
 require_once 'dbconnection/connected.php';
 
+session_start();
 
 function Clean($input)
 {

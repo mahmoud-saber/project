@@ -1,68 +1,46 @@
 <?php
-session_start();
+
 # Logic ...... 
 ##########################################################################################################
 require '../helpers/DBConnection.php';
 require '../helpers/functions.php';
-#######################################################
+/////////////////////////////////////
 ##fetch data of bus
 $sql = "select * from bus";
 $bus_sql = doQuery($sql);
-// //////////////////////////
+////////////////////////////
 ##fetch data of driver
 $sql = "select * from driver";
 $driver_sql = doQuery($sql);
-########################################################
+/////////////////////////
 if($_SERVER['REQUEST_METHOD'] == "POST"){
 
-    // CODE ..... 
-    $name_trip = Clean($_POST['name_trip']);
-    $date      = Clean($_POST['date']);
     $bus_id    = Clean($_POST['bus_id']);
-    $client_id = Clean($_POST['client_id']);
-    $price     = Clean($_POST['price']);
-    // $admin_id  = Clean($_POST['admin_id']);
+    $driver_id = Clean($_POST['driver_id']);
+    $admin_id  = Clean($_POST['admin_id']);
+
 
    
     # VALIDATE INPUT ...... 
     $errors = []; 
-    if(!Validate($name_trip,'required')){      
-        $errors['name_trip'] = "Field Required";
-    } elseif(!Validate($name_trip,'string')){      
-        $errors['name_trip'] = "Not String";
-    } 
-    /////
-    if(!Validate($date,'required')){      
-        $errors['date'] = "Field Required";
-    }
-    elseif(!Validate($date,'date')) {
-        $errors['date'] = "Invalid Format";
-    }
-    elseif(!Validate($date,'nextdate')) {
-        $errors['date'] = "Invalid Expired";
-    }
     
     if(!Validate($bus_id,'required')){      
         $errors['bus_id'] = "Field Required";
     }
-    // if(!Validate($client_id,'required')){      
-    //     $errors['client_id'] = "Field Required";
-    // }
-    if(!Validate($price,'required')){      
-        $errors['price'] = "Field Required";
+    if(!Validate($driver_id,'required')){      
+        $errors['driver_id'] = "Field Required";
     }
-   
     // if(!Validate($admin_id,'required')){      
     //     $errors['admin_id'] = "Field Required";
     // }
-
 
     # Checke errors 
     if(count($errors) > 0){
        $_SESSION['Message'] = $errors;
     }else{
-      $date =strtotime($date);
-       $sql = "insert into trip (name_trip,date,bus_id,client_id,price,admin_id) values ('$name_trip',$date, $bus_id , 1,$price, 1 )"; 
+        // code ..... 
+
+       $sql = "insert into drive_bus (bus_id,admin_id,driver_id) values ($bus_id,1,$driver_id)"; 
        $op  = doQuery($sql);
 
 
@@ -104,7 +82,7 @@ require '../layouts/sidNav.php';
 
             <?php 
 
-             PrintMessages('Dashboard / Trip / Create');
+             PrintMessages('Dashboard / Bus / Create');
              
           ?>
 
@@ -114,25 +92,25 @@ require '../layouts/sidNav.php';
         </ol>
 
 
-        <!-- id	name_trip	date	bus_id	client_id	price	admin_id -->
+
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post"
             enctype="multipart/form-data">
 
+
+
             <div class="form-group">
-                <label for="exampleInputName">NameTrip</label>
-                <input type="text" class="form-control" id="exampleInputName" aria-describedby="" name="name_trip"
-                    placeholder="Enter  NameTrip">
+                <label for="exampleInputName">Drierv</label>
+                <select class="form-control" id="exampleInputName" aria-describedby="" name="driver_id">
+
+                    <?php 
+                while($data= mysqli_fetch_assoc($driver_sql ) ){
+                    ?>
+                    <option value="<?php echo $data['id']?> "><?php echo $data['name']?> </option>
+
+                    <?php } ?>
+                </select>
             </div>
-            <div class="form-group">
-                <label for="exampleInputName">Date</label>
-                <input type="date" class="form-control" id="exampleInputName" aria-describedby="" name="date"
-                    placeholder="Enter Tripdate ">
-            </div>
-            <div class="form-group">
-                <label for="exampleInputName">Price</label>
-                <input type="number" class="form-control" id="exampleInputName" aria-describedby="" name="price"
-                    placeholder="Enter Trip price">
-            </div>
+
             <div class="form-group">
                 <label for="exampleInputName">bus_model</label>
                 <select class="form-control" id="exampleInputName" aria-describedby="" name="bus_id">
@@ -145,7 +123,11 @@ require '../layouts/sidNav.php';
                     <?php } ?>
                 </select>
             </div>
-
+            <!-- <div class="form-group">
+                <label for="exampleInputName">admin</label>
+                <input type="number" class="form-control" id="exampleInputName" aria-describedby="" name="admin_id"
+                    placeholder="Enter Bus plate_number">
+            </div> -->
 
             <button type="submit" class="btn btn-primary">SAVE</button>
         </form>
