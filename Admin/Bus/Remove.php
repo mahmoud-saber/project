@@ -3,7 +3,7 @@
    require '../helpers/DBConnection.php';
    require '../helpers/functions.php';
 
-  $id = $_GET['id_bus']; 
+  $id = $_GET['id']; 
 
   # Call DBRemove Method 
   $status = DBRemove('bus',$id); 

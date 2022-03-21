@@ -79,15 +79,15 @@ require '../layouts/sidNav.php';
 
                             ?>
                             <tr>
-                                <td><?php echo $data['id_bus']; ?></td>
+                                <td><?php echo $data['id']; ?></td>
                                 <td><?php echo $data['model']; ?></td>
                                 <td><?php echo $data['capcity']; ?></td>
                                 <td><?php echo $data['plate_number']; ?></td>
                                 <td>
-                                    <a href='Remove.php?id=<?php echo $data['id_bus']; ?>'
+                                    <a href='Remove.php?id=<?php echo $data['id']; ?>'
                                         class='btn btn-danger m-r-1em'>Delete</a>
 
-                                    <a href='edit.php?id=<?php echo $data['id_bus']; ?>'
+                                    <a href='edit.php?id=<?php echo $data['id']; ?>'
                                         class='btn btn-primary m-r-1em'>Edit</a>
                                 </td>
 

@@ -50,7 +50,7 @@ include 'views/header.php';
             <div class="container">
                 <nav id="navbar-example" class="navbar navbar-expand-lg">
                     <a class="navbar-brand" href="home.php">
-                        <img src="images/book.png" alt="" width=200px height=90px>
+                        <img src="public/images/book.png" alt="" width=200px height=90px>
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">

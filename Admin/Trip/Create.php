@@ -8,24 +8,36 @@ require '../helpers/functions.php';
 if($_SERVER['REQUEST_METHOD'] == "POST"){
 
     // CODE ..... 
-    $model = Clean($_POST['model']);
-    $capcity = Clean($_POST['capcity']);
-    $plate_number = Clean($_POST['plate_number']);
-
+    $name_trip = Clean($_POST['name_trip']);
+    $date = Clean($_POST['date']);
+    $bus_id = Clean($_POST['bus_id']);
+    $client_id = Clean($_POST['	client_id']);
+    $price = Clean($_POST['price']);
+    $admin_id = Clean($_POST['admin_id']);
 
    
     # VALIDATE INPUT ...... 
     $errors = []; 
-    
-    if(!Validate($model,'required')){       
-        $errors['model'] = "Field Required";
+    if(!Validate($name_trip,'required')){      
+        $errors['name_trip'] = "Field Required";
+    } 
+    if(!Validate($date,'required')){      
+        $errors['date'] = "Field Required";
     }
-    if(!Validate($capcity,'required')){       
-        $errors['capcity'] = "Field Required";
+    if(!Validate($bus_id,'required')){      
+        $errors['bus_id'] = "Field Required";
     }
-    if(!Validate($plate_number,'required')){       
-        $errors['plate_number'] = "Field Required";
+    if(!Validate($client_id,'required')){      
+        $errors['client_id'] = "Field Required";
     }
+    if(!Validate($price,'required')){      
+        $errors['price'] = "Field Required";
+    }
+   
+    if(!Validate($admin_id,'required')){      
+        $errors['admin_id'] = "Field Required";
+    }
+
 
     # Checke errors 
     if(count($errors) > 0){
@@ -33,7 +45,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     }else{
         // code ..... 
 
-       $sql = "insert into bus (model,capcity,plate_number) values ('$model',$capcity,$plate_number)"; 
+       $sql = "insert into trip (name_trip,date,bus_id,client_id,price,admin_id) values ('$name_trip',$date,$bus_id ,$client_id,$price,$admin_id)"; 
        $op  = doQuery($sql);
 
 
@@ -75,7 +87,7 @@ require '../layouts/sidNav.php';
 
             <?php 
 
-             PrintMessages('Dashboard / Bus / Create');
+             PrintMessages('Dashboard / Roles / Create');
              
           ?>
 
@@ -103,6 +115,21 @@ require '../layouts/sidNav.php';
                 <label for="exampleInputName">plate_number</label>
                 <input type="number" class="form-control" id="exampleInputName" aria-describedby="" name="plate_number"
                     placeholder="Enter Bus plate_number">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputName">capctiy</label>
+                <input type="text" class="form-control" id="exampleInputName" aria-describedby="" name="capcity"
+                    placeholder="Enter Bus capctiy">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputName">capctiy</label>
+                <input type="text" class="form-control" id="exampleInputName" aria-describedby="" name="capcity"
+                    placeholder="Enter Bus capctiy">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputName">capctiy</label>
+                <input type="text" class="form-control" id="exampleInputName" aria-describedby="" name="capcity"
+                    placeholder="Enter Bus capctiy">
             </div>
 
             <button type="submit" class="btn btn-primary">SAVE</button>

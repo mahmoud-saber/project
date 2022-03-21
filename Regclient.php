@@ -88,7 +88,7 @@
     <!-- forms -->
     <div class="container">
         <div class="login-content">
-            <form action="insert/insertclient.php" method="POST" name="myform" enctype="multipart/form-data">
+            <form action="insertclient.php" method="POST" name="myform" enctype="multipart/form-data">
                 <div class="input-div one">
                     <div class="i1">
                         <i class="fa fa-user"></i>

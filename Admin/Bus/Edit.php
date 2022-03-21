@@ -7,8 +7,8 @@ require '../helpers/functions.php';
 ##########################################################################################################
 # Fetch Raw Data ..... 
 
-$id = $_GET['id_bus'];
-$sql = "select * from bus where id_bus = $id";
+$id = $_GET['id'];
+$sql = "select * from bus where id= $id";
 $op  = doQuery($sql);
 $data = mysqli_fetch_assoc($op);
 
@@ -103,7 +103,17 @@ require '../layouts/sidNav.php';
             <div class="form-group">
                 <label for="exampleInputName">Model</label>
                 <input type="text" class="form-control" id="exampleInputName" aria-describedby="" name="model"
-                    value="<?php echo $data['model']; ?>" placeholder="Enter Category Title">
+                    value="<?php echo $data['model']; ?>" placeholder="Enter bus model">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputName">capcity</label>
+                <input type="text" class="form-control" id="exampleInputName" aria-describedby="" name="capcity"
+                    value="<?php echo $data['capcity']; ?>" placeholder="Enter bsu capcity">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputName">plate_number</label>
+                <input type="number" class="form-control" id="exampleInputName" aria-describedby="" name="plate_number"
+                    value="<?php echo $data['plate_number']; ?>" placeholder="Enter bus plate_number">
             </div>
 
             <button type="submit" class="btn btn-primary">Update</button>

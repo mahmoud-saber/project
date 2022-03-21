@@ -97,14 +97,14 @@ include 'views/header.php';
                         <div class="row col-0 no-gutters">
                             <div class="col-sm-12 col-md-6 col-lg-6">
                                 <!-- BOX 1 -->
-                                <a href="Client/Regclient.php">
+                                <a href="Regclient.php">
                                     <div class="rs-feature-box-1 bg-primary">
                                         <i class="fa fa-users"></i>
                                         <div class="body">
                                             <h1>CLIENTS</h1>
 
                                             <div class="spacer-10"></div>
-                                            <a href="Client/Regclient.php" class="btn">SIGN UP</a>
+                                            <a href="Regclient.php" class="btn">SIGN UP</a>
                                         </div>
                                     </div>
                                 </a>
@@ -113,14 +113,14 @@ include 'views/header.php';
 
                             <div class="col-sm-12 col-md-6 col-lg-6">
                                 <!-- BOX 4 -->
-                                <a href="Driver/Regdriver.php">
+                                <a href="Regdriver.php">
                                     <div class="rs-feature-box-1 bg-fifth">
                                         <i class="fa fa-car"></i>
                                         <div class="body">
                                             <h1>DRIVERS</h1>
 
                                             <div class="spacer-10"></div>
-                                            <a href="Driver/Regdriver.php" class="btn">SIGN UP</a>
+                                            <a href="Regdriver.php" class="btn">SIGN UP</a>
                                         </div>
                                     </div>
                                 </a>
