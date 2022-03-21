@@ -22,14 +22,25 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     // CODE ..... 
     $model = Clean($_POST['model']);
+    $capcity = Clean($_POST['capcity']);
+    $plate_number = Clean($_POST['plate_number']);
+
+    
 
 
     # VALIDATE INPUT ...... 
     $errors = [];
-
     if (!Validate($model, 'required')) {       
         $errors['model'] = "Field Required";
     }
+
+    if (!Validate($capcity, 'required')) {       
+        $errors['capcity'] = "Field Required";
+    }
+    if (!Validate($plate_number, 'required')) {       
+        $errors['plate_number'] = "Field Required";
+    }
+
 
 
     # Checke errors 
@@ -38,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     } else {
         // code ..... 
 
-        $sql = "update bus set model = '$model' where id_bus = $id";
+        $sql = "update bus set model = '$model', capcity=$capcity, plate_number = $plate_number where id_bus = $id";
         $op  =  doQuery($sql);
 
 
@@ -112,4 +123,5 @@ require '../layouts/sidNav.php';
 
 require '../layouts/footer.php';
 
+?>
 ?>

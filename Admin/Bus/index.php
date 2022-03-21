@@ -52,6 +52,9 @@ require '../layouts/sidNav.php';
                             <tr>
                                 <th>ID</th>
                                 <th>model</th>
+                                <th>capcity</th>
+                                <th>plate_number</th>
+
                                 <th>Control</th>
                             </tr>
                         </thead>
@@ -59,6 +62,8 @@ require '../layouts/sidNav.php';
                             <tr>
                                 <th>ID</th>
                                 <th>model</th>
+                                <th>capcityy</th>
+                                <th>plate_number</th>
                                 <th>Control</th>
                             </tr>
                         </tfoot>
@@ -76,6 +81,8 @@ require '../layouts/sidNav.php';
                             <tr>
                                 <td><?php echo $data['id_bus']; ?></td>
                                 <td><?php echo $data['model']; ?></td>
+                                <td><?php echo $data['capcity']; ?></td>
+                                <td><?php echo $data['plate_number']; ?></td>
                                 <td>
                                     <a href='Remove.php?id=<?php echo $data['id_bus']; ?>'
                                         class='btn btn-danger m-r-1em'>Delete</a>
