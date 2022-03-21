@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     } else {
         // code ..... 
 
-        $sql = "update bus set model = '$model', capcity=$capcity, plate_number = $plate_number where id_bus = $id";
+        $sql = "update bus set model = '$model', capcity=$capcity, plate_number = $plate_number where id = $id";
         $op  =  doQuery($sql);
 
 
