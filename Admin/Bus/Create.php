@@ -84,7 +84,7 @@ require '../layouts/sidNav.php';
             <div class="form-group">
                 <label for="exampleInputName">model</label>
                 <input type="text" class="form-control" id="exampleInputName" aria-describedby="" name="model"
-                    placeholder="Enter Category Title">
+                    placeholder="Enter Category model">
             </div>
 
             <button type="submit" class="btn btn-primary">SAVE</button>
