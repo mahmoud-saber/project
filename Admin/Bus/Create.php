@@ -67,7 +67,7 @@ require '../layouts/sidNav.php';
 
             <?php 
 
-             PrintMessages('Dashboard / Categories / Create');
+             PrintMessages('Dashboard / Bus / Create');
              
           ?>
 
