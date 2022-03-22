@@ -1,4 +1,5 @@
-<?php 
+<?php
+
      require './helpers/DBConnection.php';
      require './helpers/functions.php';
      require './helpers/checklogin.php';

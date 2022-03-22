@@ -1,5 +1,4 @@
 <?php 
-session_start();
   require './helpers/DBConnection.php';
   require './helpers/functions.php';
 

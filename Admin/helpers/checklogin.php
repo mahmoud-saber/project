@@ -1,5 +1,5 @@
 <?php
-if(!isset($_SESSION['admin'])){
+if(!isset($_SESSION['admin']['id'])){
     header('Location: loginAdmin.php');
     exit();
 }
