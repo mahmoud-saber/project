@@ -30,7 +30,7 @@ require '../layouts/sidNav.php';
 
             <?php
 
-            PrintMessages('Dashboard/drive_buses');
+            PrintMessages('Dashboard/Drive_Bus');
 
             ?>
         </ol>
@@ -43,7 +43,7 @@ require '../layouts/sidNav.php';
         <div class="card mb-4">
             <div class="card-header">
                 <i class="fas fa-table mr-1"></i>
-                List Categories
+                List Drive Bus
             </div>
             <div class="card-body">
                 <div class="table-responsive">

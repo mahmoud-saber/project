@@ -78,7 +78,7 @@ require '../layouts/sidNav.php';
 
             <?php
 
-            PrintMessages('Dashboard / Roles / Edit');
+            PrintMessages('Dashboard / Trip / Edit');
 
             ?>
 

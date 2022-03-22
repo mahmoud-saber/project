@@ -89,7 +89,7 @@ require '../layouts/sidNav.php';
 
             <?php
 
-            PrintMessages('Dashboard / Bus / Edit');
+            PrintMessages('Dashboard / Drive_Bus / Edit');
 
             ?>
 
