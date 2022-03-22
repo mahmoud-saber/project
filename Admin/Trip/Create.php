@@ -55,9 +55,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     if(count($errors) > 0){
        $_SESSION['Message'] = $errors;
     }else{
-      $date =strtotime($date);
-      $_SESSION['admin']=$admin_id;
-       $sql = "insert into trip (name_trip,date,bus_id,price,admin_id) values ('$name_trip',$date, $bus_id ,$price,$admin_id  )"; 
+       $date =strtotime($date);
+       $id_admin=$_SESSION['admin']['id'];
+       $sql = "insert into trip (name_trip,date,bus_id,price,admin_id) values ('$name_trip',$date, $bus_id ,$price,$id_admin)"; 
        $op  = doQuery($sql);
 
 
