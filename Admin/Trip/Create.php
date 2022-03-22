@@ -19,9 +19,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     $name_trip = Clean($_POST['name_trip']);
     $date      = Clean($_POST['date']);
     $bus_id    = Clean($_POST['bus_id']);
-    $client_id = Clean($_POST['client_id']);
     $price     = Clean($_POST['price']);
-    // $admin_id  = Clean($_POST['admin_id']);
 
    
     # VALIDATE INPUT ...... 
@@ -45,9 +43,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     if(!Validate($bus_id,'required')){      
         $errors['bus_id'] = "Field Required";
     }
-    // if(!Validate($client_id,'required')){      
-    //     $errors['client_id'] = "Field Required";
-    // }
+    
     if(!Validate($price,'required')){      
         $errors['price'] = "Field Required";
     }
@@ -62,7 +58,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
        $_SESSION['Message'] = $errors;
     }else{
       $date =strtotime($date);
-       $sql = "insert into trip (name_trip,date,bus_id,client_id,price,admin_id) values ('$name_trip',$date, $bus_id , 1,$price, 1 )"; 
+       $sql = "insert into trip (name_trip,date,bus_id,price,admin_id) values ('$name_trip',$date, $bus_id ,$price, 1 )"; 
        $op  = doQuery($sql);
 
 
@@ -114,7 +110,7 @@ require '../layouts/sidNav.php';
         </ol>
 
 
-        <!-- id	name_trip	date	bus_id	client_id	price	admin_id -->
+        <!-- id	name_trip	date	bus_id		price	admin_id -->
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post"
             enctype="multipart/form-data">
 

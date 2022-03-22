@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     # VALIDATE INPUT ...... 
     $errors = [];
 
-    if (!Validate($title, 'required')) {       //  Validate($title,'required') == false 
+    if (!Validate($title, 'required')) {       
         $errors['Title'] = "Field Required";
     }
 
