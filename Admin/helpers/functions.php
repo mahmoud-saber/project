@@ -109,7 +109,7 @@ function PrintMessages($message = null){
      return $status;
  }
  
- function url($input){
+ function url($input=null){
              
     return "http://".$_SERVER['HTTP_HOST']."/project/Admin/".$input;
        
