@@ -45,7 +45,7 @@ function Validate($input,$flag){
                 break;
                 
             case"string":
-                if (!preg_match("/^[a-zA-Z-']*$/",$input)) {
+                if (!preg_match("/^[a-zA-Z\s]*$/",$input)) {
                     $status=false; 
 
                 }

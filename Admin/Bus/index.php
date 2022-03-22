@@ -4,6 +4,7 @@
 ##########################################################################################################
 require '../helpers/DBConnection.php';
 require '../helpers/functions.php';
+require '../helpers/checklogin.php';
 
 # Fetch Data .... 
 $sql = "select * from bus";

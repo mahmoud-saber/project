@@ -4,6 +4,7 @@ session_start();
 ##########################################################################################################
 require '../helpers/DBConnection.php';
 require '../helpers/functions.php';
+require '../helpers/checklogin.php';
 #######################################################
 ##fetch data of bus
 $sql = "select * from bus";
@@ -48,9 +49,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
         $errors['price'] = "Field Required";
     }
    
-    // if(!Validate($admin_id,'required')){      
-    //     $errors['admin_id'] = "Field Required";
-    // }
+    
 
 
     # Checke errors 
@@ -58,7 +57,8 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
        $_SESSION['Message'] = $errors;
     }else{
       $date =strtotime($date);
-       $sql = "insert into trip (name_trip,date,bus_id,price,admin_id) values ('$name_trip',$date, $bus_id ,$price, 1 )"; 
+      $_SESSION['admin']=$admin_id;
+       $sql = "insert into trip (name_trip,date,bus_id,price,admin_id) values ('$name_trip',$date, $bus_id ,$price,$admin_id  )"; 
        $op  = doQuery($sql);
 
 

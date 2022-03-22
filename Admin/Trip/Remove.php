@@ -2,6 +2,7 @@
 
    require '../helpers/DBConnection.php';
    require '../helpers/functions.php';
+   require '../helpers/checklogin.php';
 
   $id = $_GET['id'];
    
