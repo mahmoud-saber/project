@@ -1,7 +1,5 @@
 <?php
-
-require_once 'dbconnection/connected.php';
-
+require 'Admin/helpers/DBConnection.php';
 function Clean($input)
 {
 

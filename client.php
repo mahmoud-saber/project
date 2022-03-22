@@ -1,4 +1,4 @@
-<?php include 'dbconnection/connected.php';
+<?php require 'Admin/helpers/DBConnection.php';
 include 'views/header.php';
 ?>
 
