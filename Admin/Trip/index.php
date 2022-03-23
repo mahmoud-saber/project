@@ -85,12 +85,12 @@ require '../layouts/sidNav.php';
                                 <td><?php echo $data['id']; ?></td>
                                 <td><?php echo $data['name_trip']; ?></td>
                                 <td><?php echo $data['price']; ?></td>
-                                <td><?php echo date('Y/M/D',$data['date']); ?></td>
+                                <td><?php echo date('Y/m/d',$data['date']); ?></td>
                                 <td>
                                     <a href='Remove.php?id=<?php echo $data['id']; ?>'
                                         class='btn btn-danger m-r-1em'>Delete</a>
 
-                                    <a href='edit.php?id=<?php echo $data['id']; ?>'
+                                    <a href='Edit.php?id=<?php echo $data['id']; ?>'
                                         class='btn btn-primary m-r-1em'>Edit</a>
                                 </td>
 

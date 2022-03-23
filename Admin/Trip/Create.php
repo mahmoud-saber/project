@@ -9,9 +9,7 @@ require '../helpers/checklogin.php';
 $sql = "select * from bus";
 $bus_sql = doQuery($sql);
 // //////////////////////////
-##fetch data of driver
-$sql = "select * from driver";
-$driver_sql = doQuery($sql);
+
 ########################################################
 if($_SERVER['REQUEST_METHOD'] == "POST"){
 

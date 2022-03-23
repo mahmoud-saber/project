@@ -99,7 +99,7 @@ require '../layouts/sidNav.php';
 
 
 
-        <form action="edit.php?id=<?php echo $data['id']; ?>" method="post" enctype="multipart/form-data">
+        <form action="Edit.php?id=<?php echo $data['id']; ?>" method="post" enctype="multipart/form-data">
 
             <div class="form-group">
                 <label for="exampleInputName">Model</label>

@@ -88,7 +88,7 @@ require '../layouts/sidNav.php';
                                     <a href='Remove.php?id=<?php echo $data['id']; ?>'
                                         class='btn btn-danger m-r-1em'>Delete</a>
 
-                                    <a href='edit.php?id=<?php echo $data['id']; ?>'
+                                    <a href='Edit.php?id=<?php echo $data['id']; ?>'
                                         class='btn btn-primary m-r-1em'>Edit</a>
                                 </td>
 
