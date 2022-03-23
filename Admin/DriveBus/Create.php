@@ -31,17 +31,15 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     if(!Validate($driver_id,'required')){      
         $errors['driver_id'] = "Field Required";
     }
-    // if(!Validate($admin_id,'required')){      
-    //     $errors['admin_id'] = "Field Required";
-    // }
+  
 
     # Checke errors 
     if(count($errors) > 0){
        $_SESSION['Message'] = $errors;
     }else{
         // code ..... 
-
-       $sql = "insert into drive_bus (bus_id,admin_id,driver_id) values ($bus_id,1,$driver_id)"; 
+        $id_admin=$_SESSION['admin']['id'];
+       $sql = "insert into drive_bus (bus_id,admin_id,driver_id) values ($bus_id,  $id_admin,$driver_id)"; 
        $op  = doQuery($sql);
 
 
@@ -124,11 +122,7 @@ require '../layouts/sidNav.php';
                     <?php } ?>
                 </select>
             </div>
-            <!-- <div class="form-group">
-                <label for="exampleInputName">admin</label>
-                <input type="number" class="form-control" id="exampleInputName" aria-describedby="" name="admin_id"
-                    placeholder="Enter Bus plate_number">
-            </div> -->
+
 
             <button type="submit" class="btn btn-primary">SAVE</button>
         </form>

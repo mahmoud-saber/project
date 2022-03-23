@@ -12,7 +12,7 @@
 
                     <?php
                     
-                     $moduls=["Bus","Trip","DriveBus"];
+                     $moduls=["Bus","Trip","DriveBus","Payment"];
                      foreach ($moduls as $key => $value) {
                    
                     
