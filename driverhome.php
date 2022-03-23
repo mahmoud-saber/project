@@ -1,7 +1,7 @@
 <?php include 'Admin/helpers/DBConnection.php';
-// include 'dbconnect/checklogin.php';
 
-include 'views/header.php';
+ include 'views/header.php';?>
+
 ?>
 
 <body>
@@ -62,7 +62,7 @@ include 'views/header.php';
                                 <a class="nav-link" href="driverhome.php">DRIVERHOME</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="profile.php">PROFIL</a>
+                                <a class="nav-link" href="indexDriver.php">PROFIL</a>
                             </li>
 
                             <li class="nav-item">

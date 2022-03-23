@@ -1,5 +1,5 @@
 <?php require 'Admin/helpers/DBConnection.php';
-include 'views/header.php';
+require 'views/header.php';
 ?>
 
 <body>
@@ -136,7 +136,6 @@ include 'views/header.php';
         </div>
     </div>
 
-    <!-- FOOTER SECTION dbconnect-->
     <?php include 'views/footer.php';?>
 
 

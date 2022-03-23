@@ -1,15 +1,13 @@
 <?php
 require 'Admin/helpers/DBConnection.php';
-function Clean($input)
-{
+require 'Admin/helpers/functions.php';
 
-    return  stripslashes(strip_tags(trim($input)));
-}
+
 
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
-    $username     = Clean($_POST['username']);
+    $username = Clean($_POST['username']);
     $password = Clean($_POST['password']);
     $email    = Clean($_POST['email']);
     $phone    = Clean($_POST['phone']);

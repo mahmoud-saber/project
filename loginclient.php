@@ -2,7 +2,6 @@
 
 require_once 'Admin/helpers/DBConnection.php';
 
-session_start();
 
 function Clean($input)
 {

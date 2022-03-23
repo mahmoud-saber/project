@@ -16,7 +16,6 @@ function Validate($input,$flag){
      switch ($flag) {
         
          case "required":
-             # code...
              if(empty($input)){
 
                 $status = false; 
@@ -25,7 +24,6 @@ function Validate($input,$flag){
 
 
          case "email":
-                # code...
                 if(!filter_var($input, FILTER_VALIDATE_EMAIL)){
    
                    $status = false; 
@@ -52,10 +50,10 @@ function Validate($input,$flag){
                 break;
 
                 case"phone":
-                    if (!preg_match("/^01[0-2,5][0-9]{8}*$/",$input)) {
-                        $status=false; 
-    
-                    }
+                    if (!preg_match("/^01[0-2,5][0-9]{8}$/",$input)) {
+                        $status = false;
+                       }
+                 
                     break;
 
      }
@@ -73,7 +71,6 @@ function PrintMessages($message = null){
     if(isset($_SESSION['Message'])){
             
         foreach ($_SESSION['Message'] as $key => $value) {
-            # code...
 
             echo ' <li class="breadcrumb-item active">'.$key.':'.$value.'</li>';
         }
@@ -108,6 +105,38 @@ function PrintMessages($message = null){
 
      return $status;
  }
+
+ function Upload($input)
+{
+
+
+
+    $image = null;
+
+    $imgType    = $input['image']['type'];
+
+    $imgArray = explode('/', $imgType);
+
+    $imageExtension =  strtolower(end($imgArray));
+
+
+
+    $FinalName = time() . rand() . '.' . $imageExtension;
+
+    $disPath = 'upload/images/' . $FinalName;
+
+    $imgTemName = $_FILES['image']['tmp_name'];
+
+
+    if (move_uploaded_file($imgTemName, $disPath)) {
+
+        $image = $FinalName;
+    }
+
+    return $image;
+}
+
+
  
  function url($input=null){
              

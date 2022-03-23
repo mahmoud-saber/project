@@ -62,7 +62,7 @@ include 'views/header.php';
                                 <a class="nav-link" href="userhome.php">USERHOME</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="profile.php">PROFIL</a>
+                                <a class="nav-link" href="indexClient.php">PROFIL</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="Creat.php">BOOKING</a>
