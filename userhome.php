@@ -65,7 +65,7 @@ include 'views/header.php';
                                 <a class="nav-link" href="profile.php">PROFIL</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="booking.php">BOOKING</a>
+                                <a class="nav-link" href="Creat.php">BOOKING</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="logout.php">LOGOUT</a>
@@ -84,7 +84,7 @@ include 'views/header.php';
     <div id="oc-fullslider" class="banner">
         <div class="owl-carousel owl-theme full-screen">
             <div class="item">
-                <img src="images/drivers.jpg" alt="Slider">
+                <img src="public/images/drivers.jpg" alt="Slider">
                 <div class="overlay-bg"></div>
                 <div class="container d-flex align-items-center">
                     <div class="wrap-caption">

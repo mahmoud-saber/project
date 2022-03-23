@@ -25,8 +25,8 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
        $_SESSION['Message'] = $errors;
     }else{
         // code ..... 
-
-       $sql = "insert into payment (method) values ('$method')"; 
+        $id_admin=$_SESSION['admin']['id'];
+       $sql = "insert into payment (method,admin_id) values ('$method', $id_admin)"; 
        $op  = doQuery($sql);
 
 
@@ -88,11 +88,6 @@ require '../layouts/sidNav.php';
                     placeholder="Enter method">
             </div>
 
-            <!-- <div class="form-group">
-                <label for="exampleInputName">Pament Method</label>
-                <select class="form-control" id="exampleInputName" aria-describedby="" name="method">
-                </select>
-            </div> -->
 
 
 
