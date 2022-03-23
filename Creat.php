@@ -152,7 +152,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
                                 <a class="nav-link" href="userhome.php">Client HOME</a>
                             </li>
                             <li class="nav-item active">
-                                <a class="nav-link" href="bookig.php">Booking</a>
+                                <a class="nav-link" href="Creat.php">Booking</a>
                             </li>
                             <li class="nav-item ">
                                 <a class="nav-link" href="logout.php">LOGOUT</a>
