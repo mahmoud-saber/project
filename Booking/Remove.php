@@ -6,7 +6,6 @@
 
   $id = $_GET['id']; 
 
-  # Call DBRemove Method 
   $status = DBRemove('booking',$id); 
 
 

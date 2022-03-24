@@ -1,11 +1,11 @@
 <?php
 
-# Logic ...... 
-##########################################################################################################
+
+
 require '../helpers/DBConnection.php';
 require '../helpers/functions.php';
 require '../helpers/checklogin.php';
-/////////////////////////////////////
+
 
 if($_SERVER['REQUEST_METHOD'] == "POST"){
 
@@ -13,14 +13,14 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
    
 
    
-    # VALIDATE INPUT ...... 
+    
     $errors = []; 
     
     if(!Validate($method,'required')){      
         $errors['method'] = "Field Required";
     }
   
-    # Checke errors 
+ 
     if(count($errors) > 0){
        $_SESSION['Message'] = $errors;
     }else{
@@ -44,7 +44,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 
 }
 
-##########################################################################################################
 
 
 

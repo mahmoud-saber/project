@@ -11,16 +11,14 @@
 
 
    $errors = [];  
- # Validate  name 
  if (!Validate($name, 'required')) {      
     $errors['Name'] = "Field Required";
 }elseif(!validate($name,"string")){
-    $errors['Name'] = "Invalid string";//////////////////////////
+    $errors['Name'] = "Invalid string";
 }   
    
 
    
-   # Validate  email 
     if (!Validate($email, 'required')) {      
         $errors['Email'] = "Field Required";
     }elseif(!validate($email,"email")){
@@ -28,7 +26,6 @@
     }
 
 
-     # Validate  Password 
      if (!Validate($password, 'required')) {      
         $errors['Password'] = "Field Required";
     }elseif(!validate($password,"length")){
@@ -36,12 +33,10 @@
     }
 
     
-    # Check Errors .... 
     if(count($errors) > 0){
         $_SESSION['Message'] = $errors;
     }else{
       
-      #  Login Logic ...... 
 
        $password = md5($password);
  

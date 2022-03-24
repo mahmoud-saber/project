@@ -1,16 +1,13 @@
 <?php
 
-# Logic ...... 
-##########################################################################################################
+
 require '../helpers/DBConnection.php';
 require '../helpers/functions.php';
 require '../helpers/checklogin.php';
 /////////////////////////////////////
-##fetch data of bus
 $sql = "select * from bus";
 $bus_sql = doQuery($sql);
 ////////////////////////////
-##fetch data of driver
 $sql = "select * from driver";
 $driver_sql = doQuery($sql);
 /////////////////////////
@@ -22,7 +19,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 
 
    
-    # VALIDATE INPUT ...... 
     $errors = []; 
     
     if(!Validate($bus_id,'required')){      
@@ -33,11 +29,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     }
   
 
-    # Checke errors 
     if(count($errors) > 0){
        $_SESSION['Message'] = $errors;
     }else{
-        // code ..... 
         $id_admin=$_SESSION['admin']['id'];
        $sql = "insert into drive_bus (bus_id,admin_id,driver_id) values ($bus_id,  $id_admin,$driver_id)"; 
        $op  = doQuery($sql);
@@ -56,12 +50,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 
 
 }
-
-##########################################################################################################
-
-
-
-
 
 require '../layouts/header.php';
 

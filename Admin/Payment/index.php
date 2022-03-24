@@ -1,17 +1,14 @@
 <?php
 
-# Logic ...... 
-##########################################################################################################
+
 require '../helpers/DBConnection.php';
 require '../helpers/functions.php';
 require '../helpers/checklogin.php';
 
 
-# Fetch Data payment.... 
 $sql = "select * from payment";
 $op  = doQuery($sql);
 
-##########################################################################################################
 
 
 
@@ -23,7 +20,6 @@ require '../layouts/sidNav.php';
 ?>
 
 
-<!-- ////////////////////////////////////// -->
 
 
 <main>
@@ -73,7 +69,6 @@ require '../layouts/sidNav.php';
 
                             <?php
 
-                            # Fetch And Print data .... 
 
                             while ($data = mysqli_fetch_assoc($op)) {
 

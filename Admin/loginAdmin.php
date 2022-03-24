@@ -10,7 +10,6 @@
 
 
    $errors = [];   
-   # Validate  email 
     if (!Validate($email, 'required')) {      
         $errors['email'] = "Field Required";
     }elseif(!validate($email,"email")){
@@ -18,7 +17,6 @@
     }
 
 
-     # Validate  Password 
      if (!Validate($password, 'required')) {      
         $errors['Password'] = "Field Required";
     }elseif(!validate($password,"length")){
@@ -26,12 +24,10 @@
     }
 
     
-    # Check Errors .... 
     if(count($errors) > 0){
         $_SESSION['Message'] = $errors;
     }else{
       
-      #  Login Logic ...... 
 
        $password = md5($password);
  
@@ -40,7 +36,6 @@
        $op  = doQuery($sql); 
 
        if(mysqli_num_rows($op) == 1){
-           // login 
            $data = mysqli_fetch_assoc($op); 
          
             $_SESSION['admin'] = $data; 

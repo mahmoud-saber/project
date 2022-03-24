@@ -1,7 +1,6 @@
 <?php
 
 # Logic ...... 
-##########################################################################################################
 require '../helpers/DBConnection.php';
 require '../helpers/functions.php';
 require '../helpers/checklogin.php';
@@ -10,7 +9,6 @@ require '../helpers/checklogin.php';
 $sql = "select * from bus";
 $op  = doQuery($sql);
 
-##########################################################################################################
 
 
 

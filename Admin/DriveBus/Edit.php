@@ -1,19 +1,15 @@
 <?php
 
-# Logic ...... 
-##########################################################################################################
 require '../helpers/DBConnection.php';
 require '../helpers/functions.php';
 require '../helpers/checklogin.php';
-##########################################################################################################
-# Fetch Raw Data ..... 
 
 $id = $_GET['id'];
 $sql = "select * from bus where id= $id";
 $op  = doQuery($sql);
 $data = mysqli_fetch_assoc($op);
 
-##########################################################################################################
+
 
 
 
@@ -21,7 +17,6 @@ $data = mysqli_fetch_assoc($op);
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
-    // CODE ..... 
     $model = Clean($_POST['model']);
     $capcity = Clean($_POST['capcity']);
     $plate_number = Clean($_POST['plate_number']);
@@ -44,11 +39,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 
 
-    # Checke errors 
     if (count($errors) > 0) {
         $_SESSION['Message'] = $errors;
     } else {
-        // code ..... 
 
         $sql = "update bus set model = '$model', capcity=$capcity, plate_number = $plate_number where id = $id";
         $op  =  doQuery($sql);
@@ -65,9 +58,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         }
     }
 }
-
-##########################################################################################################
-
 
 
 

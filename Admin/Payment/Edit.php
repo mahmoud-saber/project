@@ -1,18 +1,13 @@
 <?php
 
-# Logic ...... 
-##########################################################################################################
 require '../helpers/DBConnection.php';
 require '../helpers/functions.php';
 require '../helpers/checklogin.php';
-##########################################################################################################
-# Fetch Raw Data ..... 
 
 $id = $_GET['id'];
 $sql = "select * from payment where id= $id";
 $op  = doQuery($sql);
 $data = mysqli_fetch_assoc($op);
-##########################################################################################################
 
 
 
@@ -20,14 +15,12 @@ $data = mysqli_fetch_assoc($op);
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
-    // CODE ..... 
     $method = Clean($_POST['method']);
   
 
     
 
 
-    # VALIDATE INPUT ...... 
     $errors = [];
     if (!Validate($method, 'required')) {       
         $errors['method'] = "Field Required";
@@ -37,11 +30,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 
 
-    # Checke errors 
     if (count($errors) > 0) {
         $_SESSION['Message'] = $errors;
     } else {
-        // code ..... 
 
         $sql = "update payment set method = '$method' where id = $id";
         $op  =  doQuery($sql);
@@ -59,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     }
 }
 
-##########################################################################################################
+
 
 
 

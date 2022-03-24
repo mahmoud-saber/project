@@ -105,8 +105,6 @@ require 'Admin/helpers/DBConnection.php';
 
             if (isset($_SESSION['Message'])) {
 
-                echo '* ' . $_SESSION['Message'];
-
                 unset($_SESSION['Message']);
             }
 

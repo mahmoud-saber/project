@@ -1,16 +1,12 @@
 <?php
 
-# Logic ...... 
-##########################################################################################################
 require '../helpers/DBConnection.php';
 require '../helpers/functions.php';
 require '../helpers/checklogin.php';
 
-# Fetch Data .... 
 $sql = "select * from trip";
 $op  = doQuery($sql);
 
-##########################################################################################################
 
 
 
@@ -74,13 +70,11 @@ require '../layouts/sidNav.php';
 
                             <?php
 
-                            # Fetch And Print data .... 
 
                             while ($data = mysqli_fetch_assoc($op)) {
 
                             ?>
                             <tr>
-                                <!-- id	name_trip	date	bus_id	client_id	price	admin_id -->
 
                                 <td><?php echo $data['id']; ?></td>
                                 <td><?php echo $data['name_trip']; ?></td>

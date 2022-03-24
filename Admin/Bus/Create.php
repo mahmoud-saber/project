@@ -1,21 +1,18 @@
 <?php
 
-# Logic ...... 
-##########################################################################################################
 require '../helpers/DBConnection.php';
 require '../helpers/functions.php';
 require '../helpers/checklogin.php';
 
 if($_SERVER['REQUEST_METHOD'] == "POST"){
 
-    // CODE ..... 
     $model = Clean($_POST['model']);
     $capcity = Clean($_POST['capcity']);
     $plate_number = Clean($_POST['plate_number']);
 
 
    
-    # VALIDATE INPUT ...... 
+   
     $errors = []; 
     
     if(!Validate($model,'required')){       
@@ -28,11 +25,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
         $errors['plate_number'] = "Field Required";
     }
 
-    # Checke errors 
     if(count($errors) > 0){
        $_SESSION['Message'] = $errors;
     }else{
-        // code ..... 
 
        $sql = "insert into bus (model,capcity,plate_number) values ('$model',$capcity,$plate_number)"; 
        $op  = doQuery($sql);
@@ -52,7 +47,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 
 }
 
-##########################################################################################################
 
 
 

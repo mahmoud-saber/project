@@ -111,8 +111,6 @@ require 'views/header.php';
 
             if (isset($_SESSION['Message'])) {
 
-                echo '* ' . $_SESSION['Message'];
-
                 
                 unset($_SESSION['Message']);
             }

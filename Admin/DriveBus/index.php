@@ -1,16 +1,12 @@
 <?php
 
-# Logic ...... 
-##########################################################################################################
 require '../helpers/DBConnection.php';
 require '../helpers/functions.php';
 require '../helpers/checklogin.php';
 
-# Fetch Data .... 
-$sql = "select drive_bus.* , driver.name,bus.model,bus.plate_number from drive_bus inner join  driver on drive_bus.driver_id=driver.id  inner join bus on drive_bus.bus_id=bus.id; ";
+$sql = "select drive_bus.* , driver.name,bus.model,bus.plate_number,bus.capcity from drive_bus inner join  driver on drive_bus.driver_id=driver.id  inner join bus on drive_bus.bus_id=bus.id; ";
 $op  = doQuery($sql);
 
-##########################################################################################################
 
 
 
@@ -55,6 +51,7 @@ require '../layouts/sidNav.php';
                                 <th>Name Driver</th>
                                 <th>Bus</th>
                                 <th>plate_number</th>
+                                <th>capcity</th>
                                 <th>Control</th>
                             </tr>
                         </thead>
@@ -64,6 +61,7 @@ require '../layouts/sidNav.php';
                                 <th>Name Driver</th>
                                 <th>Bus</th>
                                 <th>plate_number</th>
+                                <th>capcity</th>
                                 <th>Control</th>
                             </tr>
                         </tfoot>
@@ -73,7 +71,6 @@ require '../layouts/sidNav.php';
 
                             <?php
 
-                            # Fetch And Print data .... 
 
                             while ($data = mysqli_fetch_assoc($op)) {
 
@@ -83,6 +80,8 @@ require '../layouts/sidNav.php';
                                 <td><?php echo $data['name']; ?></td>
                                 <td><?php echo $data['model']; ?></td>
                                 <td><?php echo $data['plate_number']; ?></td>
+                                <td><?php echo $data['capcity']; ?></td>
+
                                 = <td>
                                     <a href='Remove.php?id=<?php echo $data['id']; ?>'
                                         class='btn btn-danger m-r-1em'>Delete</a>

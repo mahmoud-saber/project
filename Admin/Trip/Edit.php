@@ -1,45 +1,38 @@
 <?php
 
-# Logic ...... 
-##########################################################################################################
 require '../helpers/DBConnection.php';
 require '../helpers/functions.php';
 require '../helpers/checklogin.php';
-##########################################################################################################
 
-# Fetch Raw Data Trip ..... 
+
 
 $id = $_GET['id'];
 $sql = "select * from trip where id = $id";
 $op  = doQuery($sql);
 $data = mysqli_fetch_assoc($op);
 
-##########################################################################################################
-##fetch data of bus
+
 $sql = "select * from bus";
 $bus_sql = doQuery($sql);
 
-###################################################################################3
 
 
 
 if($_SERVER['REQUEST_METHOD'] == "POST"){
 
-    // CODE ..... 
     $name_trip = Clean($_POST['name_trip']);
     $date      = Clean($_POST['date']);
     $bus_id    = Clean($_POST['bus_id']);
     $price     = Clean($_POST['price']);
 
    
-    # VALIDATE INPUT ...... 
     $errors = []; 
     if(!Validate($name_trip,'required')){      
         $errors['name_trip'] = "Field Required";
     } elseif(!Validate($name_trip,'string')){      
         $errors['name_trip'] = "Not String";
     } 
-    /////
+    
     if(!Validate($date,'required')){      
         $errors['date'] = "Field Required";
     }
@@ -58,7 +51,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
         $errors['price'] = "Field Required";
     }
 
-    # Checke errors 
     if(count($errors) > 0){
         $_SESSION['Message'] = $errors;
      }else{
@@ -82,7 +74,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
  
 }
 
-##########################################################################################################
 
 
 

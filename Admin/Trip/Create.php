@@ -1,33 +1,26 @@
 <?php
-# Logic ...... 
-##########################################################################################################
 require '../helpers/DBConnection.php';
 require '../helpers/functions.php';
 require '../helpers/checklogin.php';
-#######################################################
-##fetch data of bus
+
 $sql = "select * from bus";
 $bus_sql = doQuery($sql);
-// //////////////////////////
 
-########################################################
 if($_SERVER['REQUEST_METHOD'] == "POST"){
 
-    // CODE ..... 
     $name_trip = Clean($_POST['name_trip']);
     $date      = Clean($_POST['date']);
     $bus_id    = Clean($_POST['bus_id']);
     $price     = Clean($_POST['price']);
 
    
-    # VALIDATE INPUT ...... 
     $errors = []; 
     if(!Validate($name_trip,'required')){      
         $errors['name_trip'] = "Field Required";
     } elseif(!Validate($name_trip,'string')){      
         $errors['name_trip'] = "Not String";
     } 
-    /////
+  
     if(!Validate($date,'required')){      
         $errors['date'] = "Field Required";
     }
@@ -49,7 +42,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     
 
 
-    # Checke errors 
     if(count($errors) > 0){
        $_SESSION['Message'] = $errors;
     }else{
@@ -73,7 +65,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 
 }
 
-##########################################################################################################
 
 
 
@@ -107,7 +98,6 @@ require '../layouts/sidNav.php';
         </ol>
 
 
-        <!-- id	name_trip	date	bus_id		price	admin_id -->
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post"
             enctype="multipart/form-data">
 
